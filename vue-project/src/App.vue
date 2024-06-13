@@ -49,28 +49,9 @@ const initchart = () => {
             data: [ // 注意，最外层是一个数组，而非从某个根节点开始。
                 {
                     value: 2000,
-                    children: [{
-                        value: stor.list.value, // value字段的值，对应到面积大小。
-                        // 也可以是数组，如 [2323, 43, 55]，则数组第一项对应到面积大小。
-                        // 数组其他项可以用于额外的视觉映射，详情参见 series-treemp.levels。
-                        id: stor.list.id, // id 不是必须设置的。
-                        // 但是如果想使用 API 来改变某个节点，需要用 id 来定位。
-                        name: stor.list.name, // 显示在矩形中的描述文字。
-                        children: [
-                            stor.list.children[0],
-                            stor.list.children[1],
-                            stor.list.children[2],
-                            stor.list.children[3],
-                            stor.list.children[4],
-                            // ...
-                        ],
-                        label: { // 此节点特殊的 label 定义（如果需要的话）。
-                            // ...         // label的格式参见 series-treemap.label。
-                        },
-                        itemStyle: { // 此节点特殊的 itemStyle 定义（如果需要的话）。
-                            // ...         // label的格式参见 series-treemap.itemStyle。
-                        }
-                    }, {
+                    children: [
+                        stor.list,
+                         {
                         value: 300,
                         id: 'someid-2',
                         name: '湖北大区',
@@ -403,11 +384,8 @@ const initchart = () => {
         stor.onOpen = false
         if (e.data.children && e.data.name) {
             stor.item = e.data
-
         } else {
-           if(true){
             stor.itemli.push(e.data)
-           }
         }
 
         if (e.data.children) {

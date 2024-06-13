@@ -65,7 +65,6 @@ const bing = () => {
                     return {
                         name: v.name,
                         value: (v.value /num).toFixed(2) ,
-
                     }
                 })
             }
