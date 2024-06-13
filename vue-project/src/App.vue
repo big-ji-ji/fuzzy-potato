@@ -9,6 +9,7 @@
         <div class="boxright">
             <div class="box"></div>
             <tableVue class="table"></tableVue>
+            <div>Ahhhhhh</div>
         </div>
     </div>
 </template>
